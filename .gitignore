@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules/
+
+# Compiled files
+dist/
+out/
+*.log
+*.log.*
+*.jst
+*.map
+
+# IDE-specific files
+.vscode/
+*.code-workspace
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Environment variables file
+.env
