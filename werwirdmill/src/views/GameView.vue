@@ -10,32 +10,34 @@
     <main>
 
         <div class="logo"></div>
-        
+
         <div class="parent">
             <div class="div1">
                 <div class="title">
-                Willkommen XXX, zu Wer wird Millionär!
-            </div>
+                    Willkommen <!-- {{ user }} --> XXX, zu Wer wird Millionär!
+                </div>
             </div>
             <div class="div2">
                 <div class="question">
                     Frage: Wird ein Roman häppchenweise in der Tageszeitung abgedruckt, steht am Ende eines Teils
                     meist?
+                    {{ question }}
+
                 </div>
             </div>
             <div class="div3">
                 <div>
-                    <div class="answers"> A: Fortsetzung folgt </div>
-                    <div class="answers"> C: Die Spannung steigt </div>
+                    <div class="answers">{{ answer }} A: Fortsetzung folgt </div>
+                    <div class="answers"><!-- {{ answer }} --> C: Die Spannung steigt </div>
                 </div>
                 <div>
-                    <div class="answers"> B: Bleiben Sie dran! </div>
-                    <div class="answers"> D: Ende offen </div>
+                    <div class="answers"><!-- {{ answer }} --> B: Bleiben Sie dran! </div>
+                    <div class="answers"><!-- {{ answer }} --> D: Ende offen </div>
                 </div>
             </div>
             <div class="div4">
                 <div class="gewinn">
-
+                    <!-- {{ money }} -->
                     1.000.000 Euro<br>
                     500.000 Euro<br>
                     125.000 Euro<br>
@@ -58,12 +60,12 @@
             </div>
         </div>
 
-
-
     </main>
 </template>
       
 
+
+<script src="./../components/GameScreen.js" lang="js"></script>
 <style>
 @import "@/assets/game/game.css";
 </style>
