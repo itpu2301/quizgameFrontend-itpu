@@ -23,7 +23,7 @@ body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   max-width: 1200px;
-  max-height: 500px;
+  max-height: 600px;
   text-align: center;
   margin-top: 20px;
   border: 2px solid #00aeff;
@@ -38,6 +38,7 @@ body {
 
 .div2 {
   /* fragen-box */
+  margin-top: 50px;
   grid-area: 2/1/4/5;
   display: flex;
   justify-content: center;
@@ -46,6 +47,8 @@ body {
 
 .div3 {
   /* antworten-box */
+  margin-top: 50px;
+  padding-top: 50px;
   grid-area: 5/1/4/5;
   font-size: 20px;
   display: flex;
@@ -73,6 +76,7 @@ body {
 }
 
 .question {
+  height: 130px;
   font-size: 20px;
   text-align: left;
   margin: 20px;
@@ -84,18 +88,25 @@ body {
 }
 
 .answers {
-  width: auto;
-  height: auto;
+  width: 400px;
+  height: 100px;
   text-align: left;
   margin: 20px;
   border-radius: 30px;
   background-color: #000000;
   border: 2px solid #00aeff;
   color: white;
-  padding: 10px;
+  padding: 30px 10px;
 }
 
 .gewinn {
   margin: 5px;
   color: #fec932;
+}
+.selected {
+  background-color: rgba(255, 255, 255, 0.349);
+  color: white;
+}
+.separator {
+  color: white;
 }

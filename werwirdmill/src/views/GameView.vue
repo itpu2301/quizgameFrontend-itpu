@@ -21,45 +21,38 @@
                 <div class="question">
                     Frage: Wird ein Roman häppchenweise in der Tageszeitung abgedruckt, steht am Ende eines Teils
                     meist?
-                    {{ question }}
+                    <!-- {{ question }} -->
 
                 </div>
             </div>
             <div class="div3">
                 <div>
-                    <div class="answers">{{ answer }} A: Fortsetzung folgt </div>
-                    <div class="answers"><!-- {{ answer }} --> C: Die Spannung steigt </div>
+                    <div @click="clickAnswer('A')" class="answers">
+                        <p>{{ answers.A }}</p>
+                    </div>
+                    <div @click="clickAnswer('C')" class="answers">
+                        <p>{{ answers.C }}</p>
+                    </div>
                 </div>
                 <div>
-                    <div class="answers"><!-- {{ answer }} --> B: Bleiben Sie dran! </div>
-                    <div class="answers"><!-- {{ answer }} --> D: Ende offen </div>
+                    <div @click="clickAnswer('B')" class="answers">
+                        <p>{{ answers.B }}</p>
+                    </div>
+                    <div @click="clickAnswer('D')" class="answers">
+                        <p>{{ answers.D }}</p>
+                    </div>
                 </div>
             </div>
             <div class="div4">
                 <div class="gewinn">
-                    <!-- {{ money }} -->
-                    1.000.000 Euro<br>
-                    500.000 Euro<br>
-                    125.000 Euro<br>
-                    64.000 Euro<br>
-                    32.000 Euro<br>
-                    --- <br>
-                    16.000 Euro<br>
-                    8000 Euro<br>
-                    4000 Euro<br>
-                    300 Euro<br>
-                    2000 Euro<br>
-                    --- <br>
-                    1000 Euro<br>
-                    500 Euro<br>
-                    200 Euro<br>
-                    100 Euro<br>
-                    50 Euro
 
+                    <div v-for="(amount, index) in amounts" :key="index" :class="{ 'selected': index === amounts.length - 1 - categoryLevel }">
+        {{ amount }} <br>
+        <span v-if="(amount === '32.000 Euro' || amount === '1000 Euro') && index !== amounts.length - 1" class="separator">---</span>
+      </div>
                 </div>
             </div>
         </div>
-
     </main>
 </template>
       
