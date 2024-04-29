@@ -2,9 +2,17 @@
   <main>
     <div class="page">
       <img src="../assets/logo.png" alt="brand-logo" id="brandLogo"/>
+
+      <h3>Wer spielt&quest;</h3>
+      <input id="player" placeholder="Name">
+      <button class="close">
+        <RouterLink to="/game" id="play">Spielen</RouterLink>
+      </button>
+
       <h2>
         <RouterLink to="/game" class="btn">Spielen</RouterLink>
       </h2>
+
     </div>
     <div class="gradient"></div>
   </main>
