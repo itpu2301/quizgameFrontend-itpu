@@ -53,13 +53,14 @@ export default {
       console.log(this.selectedDiv) // zeugt selectedDiv an A-D
 
       axios
-        .post('http://example.com/api/check-answer', { answer })
+        .get('http://example.com/api/check-answer', { answer })
         .then((response) => {
           if (response.data.correct) {
             this.score++
-            this.categoryLevel++
+            this.categoryLevel++ // aus kathegorie 1 5 aus 2 5 aus 3 5
           } else {
-            // Highscore an highscore Seite weiterleiten
+            // Highscore an highscore Seite weiterleiten .post hier
+
           }
 
           // Neue Frage anzeigen

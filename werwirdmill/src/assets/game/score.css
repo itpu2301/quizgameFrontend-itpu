@@ -1,0 +1,14 @@
+.container {
+  border: 2px solid turquoise;
+  width: 800px;
+  padding: 10px;
+  text-align: center;
+}
+
+.flex {
+  width: 800px;
+  display: flex;
+  color: red;
+  padding: 10px;
+  text-align: center;
+}

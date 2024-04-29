@@ -14,7 +14,7 @@
         <div class="parent">
             <div class="div1">
                 <div class="title">
-                    Willkommen <!-- {{ user }} --> XXX, zu Wer wird Millionär!
+                    Willkommen <!-- {{ user }} -->, zu Wer wird Millionär!
                 </div>
             </div>
             <div class="div2">
@@ -46,10 +46,12 @@
             <div class="div4">
                 <div class="gewinn">
 
-                    <div v-for="(amount, index) in amounts" :key="index" :class="{ 'selected': index === amounts.length - 1 - categoryLevel }">
-        {{ amount }} <br>
-        <span v-if="(amount === '32.000 Euro' || amount === '1000 Euro') && index !== amounts.length - 1" class="separator">---</span>
-      </div>
+                    <div v-for="(amount, index) in amounts" :key="index"
+                        :class="{ 'selected': index === amounts.length - 1 - categoryLevel }">
+                        {{ amount }} <br>
+                        <span v-if="(amount === '32.000 Euro' || amount === '1000 Euro') && index !== amounts.length - 1"
+                            class="separator">---</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,5 +62,4 @@
 
 <script src="./../components/GameScreen.js" lang="js"></script>
 <style>
-@import "@/assets/game/game.css";
-</style>
+@import "@/assets/game/game.css";</style>
