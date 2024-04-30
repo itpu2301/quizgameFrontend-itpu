@@ -1,20 +1,13 @@
 <template>
-    <!-- <nav>
-        <div class="column-4 home-1">
-            <h2 class="home-text">
-                <RouterLink to="/">Home-Screen</RouterLink>
-            </h2>
-        </div>
-    </nav> -->
-
+    <button class="close">
+        <RouterLink to="/" id="back">zur&uuml;ck</RouterLink>
+    </button>
     <main>
-
         <div class="logo"></div>
-
         <div class="parent">
             <div class="div1">
                 <div class="title">
-                    Willkommen <!-- {{ user }} -->, zu Wer wird Millionär!
+                    Willkommen <span class="player-name">{{ playerName }}</span>, zu Wer wird Millionär!
                 </div>
             </div>
             <div class="div2">
@@ -49,7 +42,8 @@
                     <div v-for="(amount, index) in amounts" :key="index"
                         :class="{ 'selected': index === amounts.length - 1 - categoryLevel }">
                         {{ amount }} <br>
-                        <span v-if="(amount === '32.000 Euro' || amount === '1000 Euro') && index !== amounts.length - 1"
+                        <span
+                            v-if="(amount === '32.000 Euro' || amount === '1000 Euro') && index !== amounts.length - 1"
                             class="separator">---</span>
                     </div>
                 </div>
@@ -57,9 +51,10 @@
         </div>
     </main>
 </template>
-      
+
 
 
 <script src="./../components/GameScreen.js" lang="js"></script>
 <style>
-@import "@/assets/game/game.css";</style>
+@import "@/assets/game/game.css";
+</style>
