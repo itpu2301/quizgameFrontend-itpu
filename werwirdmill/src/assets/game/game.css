@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: darkblue;
+  background-color: rgb(0, 0, 0);
   color: rgb(0, 0, 0);
   background-image: url('./../background.svg');
   background-size: cover;
@@ -110,3 +110,27 @@ body {
 .separator {
   color: white;
 }
+.buttons {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 20px;
+}
+.buttons, a:link, a:visited {
+  color: #ffffff;
+}
+/* mouse over link */
+.buttons, a:hover {
+  color: #00ccff;
+}
+.button {
+  display: inline-block;
+  border: 2px solid #00aeff;
+  background-color: #000000;
+  padding: 10px;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  }

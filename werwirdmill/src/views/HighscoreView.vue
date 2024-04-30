@@ -1,30 +1,47 @@
 <template>
-    <nav>
+  <main>
 
-        <div>
-            <h2>
-                <RouterLink to="/game">Neue Runde</RouterLink>
-            </h2>
-        </div>
-    </nav>
-    <main>
-        <div class="container">
-  <div>Highscore</div>
-</div>
-<div class="flex">
-  <div>Name</div>
-  <div>Punkte</div>
-</div>
-<div class="flex">
-  <div>namen</div>
-  <div>punkte</div>
-</div>
-    </main>
+    <table class="container">
+      <tr>
+        <td class="flex" colspan="2">
+          Higscore
+        </td>
+      </tr>
+      <tr>
+        <td class="rows">
+          Name
+
+        </td>
+        <td class="rows">
+          Punkte
+
+        </td>
+      </tr>
+      <tr>
+        <td class="rows">
+          username
+        </td>
+        <td class="rows">
+          userpoints
+        </td>
+      </tr>
+      <tr>
+        <td class="rows" colspan="2">
+        
+        <RouterLink to="/game">Neue Runde</RouterLink>
+    
+        </td>
+      </tr>
+    </table>
+
+
+  </main>
 </template>
-  
 
 
 
-<script src="./../components/GameScreen.js" lang="js"></script>
+
+<!-- <script src="./../components/GameScreen.js" lang="js"></script> -->
 <style>
-@import "@/assets/game/score.css";</style>
+@import "@/assets/game/score.css";
+</style>
