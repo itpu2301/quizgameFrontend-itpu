@@ -28,11 +28,38 @@ body {
   height: 546px;
   width: 446px;
   object-fit: scale-down;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
 }
 
 #brandLogo:hover {
-  transform: scale(1.2);
+  animation: jitter 0.5s ease;
+}
+
+@keyframes jitter {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h3 {
+  color: #ffdc7f;
+}
+
+#player {
+  background-color: transparent;
+  border: 1px;
 }
 
 #play {
@@ -40,31 +67,22 @@ body {
   color: #fff;
 }
 
-.pulse:hover,
-.pulse:focus {
-  -webkit-animation: pulse 1s;
-          animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
+#play:hover,
+#play:focus {
+  color: goldenrod;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
+.close:hover,
+.close:focus {
+  box-shadow: inset -10em 0 0 0 var(--hover), inset 10em o o o var(--hover);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
+.close, #player {
+  --color: #ff7f82;
+  --color: #ffdc7f;
 }
 
-.pulse {
-  --color: #a033ff;
-  --hover: #d400ff;
-}
-
-button {
+button, #player {
   color: var(--color);
   transition: 0.25s;
   background: none;

@@ -4,6 +4,7 @@ export default {
   name: 'App',
   data() {
     return {
+      playerName:'',
       question: '',
       answers: {},
       selectedDiv: null,
@@ -72,5 +73,11 @@ export default {
   },
   beforeMount() {
     this.getQuestion();
+  },
+  mounted(){
+    // überprüfung spielername vorhanden
+    if (this.$route.query.player){
+      this.playerName = this.$route.query.player; // get name
+    }
   }
 }

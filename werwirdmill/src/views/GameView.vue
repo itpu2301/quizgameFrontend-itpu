@@ -17,7 +17,7 @@
         <div class="parent">
             <div class="div1">
                 <div class="title">
-                    Willkommen <!-- {{ user }} -->, zu Wer wird Millionär!
+                    Willkommen <span class="player-name">{{ playerName }}</span>, zu Wer wird Millionär!
                 </div>
             </div>
             <div class="div2">
