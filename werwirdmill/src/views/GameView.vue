@@ -28,18 +28,18 @@
             <div class="div3">
                 <div>
                     <div @click="clickAnswer('A')" class="answers">
-                        <p>{{ answers.A }}</p>
+                        <p v-if="answers.A">{{ answers.A.text }}</p>
                     </div>
                     <div @click="clickAnswer('C')" class="answers">
-                        <p>{{ answers.C }}</p>
+                        <p v-if="answers.C">{{ answers.C.text }}</p>
                     </div>
                 </div>
                 <div>
                     <div @click="clickAnswer('B')" class="answers">
-                        <p>{{ answers.B }}</p>
+                        <p v-if="answers.B">{{ answers.B.text }}</p>
                     </div>
                     <div @click="clickAnswer('D')" class="answers">
-                        <p>{{ answers.D }}</p>
+                        <p v-if="answers.D">{{ answers.D.text }}</p>
                     </div>
                 </div>
             </div>
