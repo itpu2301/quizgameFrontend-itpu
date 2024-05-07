@@ -15,21 +15,7 @@ export default {
     }
   },
   methods: {
-    async getQuestion() {
-      const { data } = await axios.get('https://yesno.wtf/api');
 
-      this.question = data.question;
-
-      // Zufällige Reihenfolge der Antworten erstellen
-      const shuffledAnswers = this.shuffleArray([data.answer, 'B: Bleiben Sie dran!', 'C: Die Spannung steigt', 'D: Ende offen']);
-
-      this.answers = {
-        A: shuffledAnswers[0],
-        B: shuffledAnswers[1],
-        C: shuffledAnswers[2],
-        D: shuffledAnswers[3]
-      };
-    },
     shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -49,27 +35,54 @@ export default {
     // higscore ausgeben
     // neues spiel frage ja/nein
 
+    async getQuestion() {
+      const { data } = await axios.get('http://127.0.0.1:5000/random_question');
+      this.question = data.question;
+    
+      // Extrahiere Antworttexte aus data.answers
+      const answerTexts = [];
+      for (let i = 0; i < data.answers.length; i++) {
+        answerTexts.push(data.answers[i].answer);
+      }
+    
+      // Mische die Antworttexte
+      const shuffledAnswers = this.shuffleArray(answerTexts);
+    
+      // Verteile die gemischten Antworten auf A-D
+      this.answers = { A: shuffledAnswers[0], B: shuffledAnswers[1], C: shuffledAnswers[2], D: shuffledAnswers[3] };
+    
+      return { id: data.question_id }; // Gibt die ID der Frage zurück
+    },
+    
+    // clickAnswer() Funktion mit ID als Parameter
     clickAnswer(answer) {
-      this.selectedDiv = answer
-      console.log(this.selectedDiv) // zeugt selectedDiv an A-D
-
-      axios
-        .get('http://example.com/api/check-answer', { answer })
-        .then((response) => {
-          if (response.data.correct) {
-            this.score++
-            this.categoryLevel++ // aus kathegorie 1 5 aus 2 5 aus 3 5
-          } else {
-            // Highscore an highscore Seite weiterleiten .post hier
-
-          }
-
-          // Neue Frage anzeigen
-        })
-        .catch((error) => {
-          console.error(error)
-        })
+      this.getQuestion().then((question) => {
+        const id = question.id; // Extrahiere die ID aus der Frage
+    
+        this.selectedDiv = answer;
+        console.log(this.selectedDiv); // Zeigt selectedDiv von A-D an
+        console.log(id)
+    
+        const url = `http://127.0.0.1:5000/is_correct/${id}/${this.question}`;
+    
+        axios.get(url)
+          .then((response) => {
+            if (response.data.correct) {
+              this.score++;
+              this.categoryLevel += 5; // Erhöht die Kategorieebene um 5
+            } else {
+              // Highscore an highscore Seite weiterleiten .post hier
+            }
+    
+            // Neue Frage anzeigen
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
     }
+
+
   },
   beforeMount() {
     this.getQuestion();

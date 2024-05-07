@@ -21,10 +21,7 @@
                 </div>
             </div>
             <div class="div2">
-                <div class="question">
-                    Frage: Wird ein Roman häppchenweise in der Tageszeitung abgedruckt, steht am Ende eines Teils
-                    meist?
-                    <!-- {{ question }} -->
+                <div class="question"> Frage: {{ question }}
 
                 </div>
             </div>
